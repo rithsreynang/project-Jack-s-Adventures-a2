@@ -33,6 +33,16 @@ def start(event):
     canvas.create_text(635,465 , text='About', font=('Lucky Coin', 40) ,fill='#067FD0', anchor='nw' , tags='info')
     canvas.create_text(645,565 , text='EXIT', font=('Lucky Coin', 40) ,fill='#067FD0', anchor='nw' , tags='exit')
 
+def info(event):
+    canvas.create_image(0,0 , image=it, anchor='nw')
+    canvas.create_text(600,500 , text='How to play', font=('Lucky Coin',30) ,fill='black', anchor='nw')
+    canvas.create_text(600,560 , text='Key left = Go left', font=('Lucky Coin',20) ,fill='black', anchor='nw')
+    canvas.create_text(600,610 , text='Key right = Go right', font=('Lucky Coin',20) ,fill='black', anchor='nw')
+    canvas.create_text(600,650 , text='Space = Jump', font=('Lucky Coin',20) ,fill='black', anchor='nw')
+
+    # go back
+    canvas.create_image(20,20 , image=back, anchor='nw' , tags='back')
+    canvas.create_text(65,45 , tags='back')
 
 # ______________________________sound__________________________________
 def songGame():
