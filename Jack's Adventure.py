@@ -178,24 +178,49 @@ def gridLevelHard(event):
     canvas.create_image(0,0,image=hard_bg, anchor='nw',tags='levelhard')
 
 
-    canvas.create_image(100,560,image=wall, anchor='nw',tags='levelhard')
-    canvas.create_image(220,500,image=wall, anchor='nw',tags='levelhard')
-    canvas.create_image(340,440,image=wall, anchor='nw',tags='levelhard')
-    canvas.create_image(500,360,image=wall, anchor='nw',tags='levelhard')
-    canvas.create_image(650,300,image=wall, anchor='nw',tags='levelhard')
-    canvas.create_image(810,230,image=wall, anchor='nw',tags='levelhard')
-    canvas.create_image(930,180,image=wall, anchor='nw',tags='levelhard')
-    canvas.create_image(1100,120,image=wall, anchor='nw',tags='levelhard')
-    canvas.create_image(1180,120,image=wall, anchor='nw',tags='levelhard')
-    canvas.create_image(1250,120,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(120,560,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(250,440,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(120,320,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(0,200,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(450,200,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(450,300,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(450,600,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(650,340,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(750,540,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(750,440,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(750,640,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(1100,500,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(1200,380,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(1265,260,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(1000,180,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(1180,80,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(1250,80,image=wall, anchor='nw',tags='levelhard')
+    canvas.create_image(1270,7,image=door, anchor='nw',tags='levelmedium')
 
-    canvas.create_image(200,400,image=coin, anchor='nw',tags='levelhard')
-    canvas.create_image(250,400,image=coin, anchor='nw',tags='levelhard')
-    canvas.create_image(350,320,image=coin, anchor='nw',tags='levelhard')
-    canvas.create_image(280,320,image=coin, anchor='nw',tags='levelhard')
-    canvas.create_image(500,280,image=diamond, anchor='nw',tags='levelhard')
-    canvas.create_image(580,250,image=coin, anchor='nw',tags='levelhard')
-    canvas.create_image(680,200,image=coin, anchor='nw',tags='levelhard')
+
+    coin_positions = [
+                    (120,560), 
+                    (250,440), 
+                    (100,440), 
+                    (120,320), 
+                    (420,320), 
+                    (200,200), 
+                    (150,80), 
+                    (750,440),
+                    (650,320),
+                    (1100,500),
+                    (1200,380),
+                    (1265,260),
+                    (1000,180),
+                    (1180,80),
+                    (1250,80)
+                    ]
+
+    # canvas.create_image(500, 280, image=diamond, anchor='nw', tags='levelmedium')
+
+    for position in coin_positions:
+        canvas.create_image(position[0], position[1], image=coin, anchor='nw', tags='levelhard')
+
 
     canvas.create_image(150,-55,image=hart, anchor='nw',tags='levelmedium')
     canvas.create_text(500,20, text='Time: 20s', font=('Lucky Coin',20),fill='white' , anchor='nw',tags="levelmedium")
