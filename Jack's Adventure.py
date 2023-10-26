@@ -58,11 +58,11 @@ def chooslevel(event):
     canvas.create_image(20,20 , image= back, anchor='nw' , tags='back')
     canvas.create_text(65,45, tags='back')
     # level 1 
-    canvas.create_text(365,315 , text='LOW', font = ('Lucky Coin', 40) , anchor='nw' , tags='level1')
+    canvas.create_text(365,280 , text='LOW', font = ('Lucky Coin', 40),fill='blue', anchor='nw' , tags='level1')
     # level 2
-    canvas.create_text(632,315 , text='MEDIUM', font=('Lucky Coin', 40) , anchor='nw' , tags='level2')
+    canvas.create_text(632,280 , text='MEDIUM', font=('Lucky Coin', 40),fill='blue' , anchor='nw' , tags='level2')
     # level 3
-    canvas.create_text(955,315 , text='HARD', font=('Lucky Coin', 40) , anchor='nw' , tags='level3')
+    canvas.create_text(955,280, text='HARD', font=('Lucky Coin', 40),fill='blue' , anchor='nw' , tags='level3')
 
 #  grid level low___________
 def gridLevelLow(event):
@@ -103,7 +103,8 @@ def gridLevelLow(event):
     canvas.create_image(1275,50,image=door, anchor='nw',tags='levellow')
     canvas.create_image(150,-55,image=hart, anchor='nw',tags='levellow')
 
-    canvas.create_text(350,20, text='Time: 20s', font=('Lucky Coin',20),fill='black' , anchor='nw',tags="levellow")
+    canvas.create_text(500,20, text='Time: 20s', font=('Lucky Coin',20),fill='black' , anchor='nw',tags="levellow")
+    canvas.create_text(350,20, text='Score : 00', font=('Lucky Coin',20),fill='black' , anchor='nw',tags="levellow")
 # go back
     canvas.create_image(5,5 , image=back, anchor='nw' , tags='bak')
     canvas.tag_bind('bak', '<Button-1>',chooslevel)
@@ -126,7 +127,6 @@ def gridLevelMedium(event):
     canvas.create_image(250,440,image=wall, anchor='nw',tags='levelmedium')
     canvas.create_image(120,320,image=wall, anchor='nw',tags='levelmedium')
     canvas.create_image(0,200,image=wall, anchor='nw',tags='levelmedium')
-    canvas.create_image(150,80,image=wall, anchor='nw',tags='levelmedium')
     canvas.create_image(500,200,image=wall, anchor='nw',tags='levelmedium')
     canvas.create_image(750,440,image=wall, anchor='nw',tags='levelmedium')
     canvas.create_image(650,320,image=wall, anchor='nw',tags='levelmedium')
@@ -136,6 +136,10 @@ def gridLevelMedium(event):
     canvas.create_image(1000,180,image=wall, anchor='nw',tags='levelmedium')
     canvas.create_image(1180,80,image=wall, anchor='nw',tags='levelmedium')
     canvas.create_image(1250,80,image=wall, anchor='nw',tags='levelmedium')
+    canvas.create_image(1270,7,image=door, anchor='nw',tags='levelmedium')
+    canvas.create_image(150,-55,image=hart, anchor='nw',tags='levelmedium')
+    canvas.create_text(500,20, text='Time: 20s', font=('Lucky Coin',20),fill='white' , anchor='nw',tags="levelmedium")
+    canvas.create_text(350,20, text='Score : 00', font=('Lucky Coin',20),fill='white' , anchor='nw',tags="levelmedium")
 
     coin_positions = [
                     (120,560), 
@@ -159,7 +163,6 @@ def gridLevelMedium(event):
 
     for position in coin_positions:
         canvas.create_image(position[0], position[1], image=coin, anchor='nw', tags='levelmedium')
-
 
     # go back
     canvas.create_image(5,5 , image=back, anchor='nw' , tags='back')
@@ -194,6 +197,9 @@ def gridLevelHard(event):
     canvas.create_image(580,250,image=coin, anchor='nw',tags='levelhard')
     canvas.create_image(680,200,image=coin, anchor='nw',tags='levelhard')
 
+    canvas.create_image(150,-55,image=hart, anchor='nw',tags='levelmedium')
+    canvas.create_text(500,20, text='Time: 20s', font=('Lucky Coin',20),fill='white' , anchor='nw',tags="levelmedium")
+    canvas.create_text(350,20, text='Score : 00', font=('Lucky Coin',20),fill='white' , anchor='nw',tags="levelmedium")
     canvas.create_image(5,5 , image=back, anchor='nw' , tags='bak')
     canvas.tag_bind('bak', '<Button-1>',chooslevel)
 # ______________________________sound__________________________________
@@ -235,6 +241,7 @@ grash= ImageTk.PhotoImage(file="images/grash.png")
 diamond= ImageTk.PhotoImage(file="images/diamond.png")
 door= ImageTk.PhotoImage(file="images/home.png")
 hart= ImageTk.PhotoImage(file="images/hart.png")
+door2= ImageTk.PhotoImage(file="images/door2.png")
 
 
 start(event=start) 
