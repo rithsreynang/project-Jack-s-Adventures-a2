@@ -32,7 +32,10 @@ def start(event):
     canvas.create_text(635,365 , text='START', font=('Lucky Coin', 40) ,fill='#067FD0', anchor='nw' , tags='start')
     canvas.create_text(635,465 , text='About', font=('Lucky Coin', 40) ,fill='#067FD0', anchor='nw' , tags='info')
     canvas.create_text(645,565 , text='EXIT', font=('Lucky Coin', 40) ,fill='#067FD0', anchor='nw' , tags='exit')
-
+#  exit game___________
+def exitfromgame(event):
+    canvas.quit()
+#  info___________
 def info(event):
     canvas.create_image(0,0 , image=it, anchor='nw')
     canvas.create_text(600,500 , text='How to play', font=('Lucky Coin',30) ,fill='black', anchor='nw')
@@ -43,6 +46,23 @@ def info(event):
     # go back
     canvas.create_image(20,20 , image=back, anchor='nw' , tags='back')
     canvas.create_text(65,45 , tags='back')
+
+#  choose level___________
+def chooslevel(event):
+    global isreset
+    canvas.delete('all')
+    isreset=[False,False,False]
+    # interface page level
+    canvas.create_image(0,0 , image=page2 , anchor='nw')
+    # go back
+    canvas.create_image(20,20 , image= back, anchor='nw' , tags='back')
+    canvas.create_text(65,45, tags='back')
+    # level 1 
+    canvas.create_text(365,315 , text='LOW', font = ('Lucky Coin', 40) , anchor='nw' , tags='level1')
+    # level 2
+    canvas.create_text(632,315 , text='MEDIUM', font=('Lucky Coin', 40) , anchor='nw' , tags='level2')
+    # level 3
+    canvas.create_text(955,315 , text='HARD', font=('Lucky Coin', 40) , anchor='nw' , tags='level3')
 
 # ______________________________sound__________________________________
 def songGame():
@@ -83,8 +103,11 @@ diamond= ImageTk.PhotoImage(file="images/diamond.png")
 
 start(event=start) 
 
-
+canvas.tag_bind('start', '<Button-1>',chooslevel)
 canvas.tag_bind('back', '<Button-1>',start)
+canvas.tag_bind('info', '<Button-1>',info)
+canvas.tag_bind('exit', '<Button-1>',exitfromgame)
+
 
 frame.pack(expand=True, fill='both')
 canvas.pack(expand=True, fill='both')
