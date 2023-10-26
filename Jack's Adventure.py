@@ -87,19 +87,26 @@ def gridLevelLow(event):
     canvas.create_image(1150,125,image=wall, anchor='nw',tags='levellow')
    
 
-    canvas.create_image(200,400,image=coin, anchor='nw',tags='levellow')
-    canvas.create_image(250,400,image=coin, anchor='nw',tags='levellow')
-    canvas.create_image(350,320,image=coin, anchor='nw',tags='levellow')
-    canvas.create_image(280,320,image=coin, anchor='nw',tags='levellow')
-    canvas.create_image(500,280,image=diamond, anchor='nw',tags='levellow')
-    canvas.create_image(500,280,image=diamond, anchor='nw',tags='levellow')
-    canvas.create_image(580,250,image=coin, anchor='nw',tags='levellow')
-    canvas.create_image(680,200,image=coin, anchor='nw',tags='levellow')
-    canvas.create_image(680,200,image=coin, anchor='nw',tags='levellow')
-    canvas.create_image(1280,50,image=door, anchor='nw',tags='levellow')
+    canvas.create_image(100,450,image=coin, anchor='nw',tags='levellow')
+    canvas.create_image(160,450,image=coin, anchor='nw',tags='levellow')
+    canvas.create_image(220,450,image=coin, anchor='nw',tags='levellow')
+    canvas.create_image(330,350,image=coin, anchor='nw',tags='levellow')
+    canvas.create_image(380,350,image=coin, anchor='nw',tags='levellow')
+    canvas.create_image(480,250,image=coin, anchor='nw',tags='levellow')
+    canvas.create_image(540,250,image=coin, anchor='nw',tags='levellow')
+    canvas.create_image(600,250,image=coin, anchor='nw',tags='levellow')
+    canvas.create_image(760,160,image=coin, anchor='nw',tags='levellow')
+    canvas.create_image(830,160,image=coin, anchor='nw',tags='levellow')
+    canvas.create_image(950,130,image=diamond, anchor='nw',tags='levellow')
+    canvas.create_image(1050,130,image=diamond, anchor='nw',tags='levellow')
+    canvas.create_image(1275,50,image=door, anchor='nw',tags='levellow')
+    canvas.create_image(1275,50,image=door, anchor='nw',tags='levellow')
+    canvas.create_image(150,-55,image=hart, anchor='nw',tags='levellow')
+
+    canvas.create_text(350,20, text='Time: 20s', font=('Lucky Coin',20),fill='black' , anchor='nw',tags="levellow")
 # go back
-    canvas.create_image(5,5 , image=back, anchor='nw' , tags='back')
-    canvas.tag_bind('back', '<Button-1>',chooslevel)
+    canvas.create_image(5,5 , image=back, anchor='nw' , tags='bak')
+    canvas.tag_bind('bak', '<Button-1>',chooslevel)
     
 
 # #  grid level medium___________
@@ -108,7 +115,7 @@ def gridLevelMedium(event):
     canvas.delete('all')
     isreset=[False,False,False]
 
-    canvas.create_image(0,0,image=bg_game, anchor='nw',tags='levelmedium')
+    canvas.create_image(0,0,image=medium_bg, anchor='nw',tags='levelmedium')
     canvas.create_image(-40,540,image=grash, anchor='nw',tags='levelmedium')
     canvas.create_image(260,540,image=grash, anchor='nw',tags='levelmedium')
     canvas.create_image(580,540,image=grash, anchor='nw',tags='levelmedium')
@@ -157,25 +164,23 @@ def gridLevelMedium(event):
     # go back
     canvas.create_image(5,5 , image=back, anchor='nw' , tags='back')
 
+    canvas.create_image(5,5 , image=back, anchor='nw' , tags='bak')
+    canvas.tag_bind('bak', '<Button-1>',chooslevel)
 
 def gridLevelHard(event):
     global isreset
     canvas.delete('all')
     isreset=[False,False,False]
 
-    canvas.create_image(0,0,image=bg_game, anchor='nw',tags='levelhard')
-    canvas.create_image(-40,540,image=grash, anchor='nw',tags='levelhard')
-    canvas.create_image(260,540,image=grash, anchor='nw',tags='levelhard')
-    canvas.create_image(580,540,image=grash, anchor='nw',tags='levelhard')
-    canvas.create_image(890,540,image=grash, anchor='nw',tags='levelhard')
-    canvas.create_image(1100,540,image=grash, anchor='nw',tags='levelhard')
+    canvas.create_image(0,0,image=hard_bg, anchor='nw',tags='levelhard')
+
 
     canvas.create_image(100,560,image=wall, anchor='nw',tags='levelhard')
     canvas.create_image(220,500,image=wall, anchor='nw',tags='levelhard')
     canvas.create_image(340,440,image=wall, anchor='nw',tags='levelhard')
     canvas.create_image(500,360,image=wall, anchor='nw',tags='levelhard')
     canvas.create_image(650,300,image=wall, anchor='nw',tags='levelhard')
-    canvas.create_image(810,230,image=wall, anchorlevelhard='nw',tags='')
+    canvas.create_image(810,230,image=wall, anchor='nw',tags='levelhard')
     canvas.create_image(930,180,image=wall, anchor='nw',tags='levelhard')
     canvas.create_image(1100,120,image=wall, anchor='nw',tags='levelhard')
     canvas.create_image(1180,120,image=wall, anchor='nw',tags='levelhard')
@@ -189,6 +194,8 @@ def gridLevelHard(event):
     canvas.create_image(580,250,image=coin, anchor='nw',tags='levelhard')
     canvas.create_image(680,200,image=coin, anchor='nw',tags='levelhard')
 
+    canvas.create_image(5,5 , image=back, anchor='nw' , tags='bak')
+    canvas.tag_bind('bak', '<Button-1>',chooslevel)
 # ______________________________sound__________________________________
 def songGame():
     winsound.PlaySound("sounds/game-procces.wav", winsound.SND_ASYNC | winsound.SND_LOOP )
@@ -213,6 +220,8 @@ page1= ImageTk.PhotoImage(file="images/page1.jpg")
 page2= ImageTk.PhotoImage(file="images/page2.jpg")
 wall=ImageTk.PhotoImage(file="images/wall.jpg")
 bg_game=ImageTk.PhotoImage(file="images/bg.jpg")
+medium_bg=ImageTk.PhotoImage(file="images/medium.jpg")
+hard_bg=ImageTk.PhotoImage(file="images/hard.jpg")
 
 back= ImageTk.PhotoImage(file="images/back.png")
 enter= ImageTk.PhotoImage(file="images/enter.png")
@@ -225,6 +234,7 @@ it= ImageTk.PhotoImage(file="images/about.png")
 grash= ImageTk.PhotoImage(file="images/grash.png")
 diamond= ImageTk.PhotoImage(file="images/diamond.png")
 door= ImageTk.PhotoImage(file="images/home.png")
+hart= ImageTk.PhotoImage(file="images/hart.png")
 
 
 start(event=start) 
